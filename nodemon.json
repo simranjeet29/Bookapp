@@ -1,7 +1,0 @@
-{
-    "env": {
-        "mongopass": "bookstore",
-        "port" : 2002,
-        "googledevkey": "&key=AIzaSyAbkHFfwUXyWvVrSUuGTR3yu0Bz_ierJ-s"
-    }
-}
