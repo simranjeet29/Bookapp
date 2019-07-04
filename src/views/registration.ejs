@@ -1,0 +1,89 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./../css/index.css">
+    <title>WEBAPP PROJECT</title>
+</head>
+
+<body>
+     <%- include('partials/navbar') %>
+    <div class="view full-page-intro" style="background-image: url('https://www.google.com.np/imgres?imgurl=https%3A%2F%2Fwww.w3schools.com%2Fw3css%2Fimg_lights.jpg&imgrefurl=https%3A%2F%2Fwww.w3schools.com%2Fw3css%2Fw3css_images.asp&docid=R0KnAtfyBDsyiM&tbnid=kwgHAQqTiLQXLM%3A&vet=10ahUKEwj5z9nr277bAhWBbX0KHZzyAS8QMwitASgBMAE..i&w=600&h=400&bih=702&biw=1366&q=image&ved=0ahUKEwj5z9nr277bAhWBbX0KHZzyAS8QMwitASgBMAE&iact=mrc&uact=8'); background-repeat: no-repeat; background-size: cover;">
+        <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+          <div class="container">
+            <div class="row wow fadeIn">
+              <div class="col-md-6 mb-4 white-text text-center text-md-left">
+                <h1 class="display-4 font-weight-bold">Sign UP</h1>
+                <hr class="hr-light">
+                <p>
+                  <strong>For the more information</strong>
+                </p>
+                <p class="mb-4 d-none d-md-block">
+                  <strong>Quickly get information from new leads and customers by signing up .WIth their information, you can funnel them into new accounts in an instant.Follow us on FACEBOOK</strong>
+                </p>
+              </div>
+              <div class="col-md-6 col-xl-5 mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <form action='/registration' method='POST'> 
+                      <p class="h4 text-center mb-4">Sign up</p>
+                      <div class="md-form">
+                         <i class="fa fa-user prefix grey-text"></i>
+                         <input type="text" name="materialFormRegisterNameEx" class="form-control">
+                         <label for="materialFormRegisterNameEx" >Your name</label>
+                      </div>
+                      <div class="md-form">
+                         <i class="fa fa-envelope prefix grey-text"></i>
+                         <input type="email" name="useremail" class="form-control">
+                         <label for="useremail">Your email</label>
+                      </div>
+                      <div class="md-form">
+                         <i class="fa fa-exclamation-triangle prefix grey-text"></i>
+                         <input type="email" name="materialFormRegisterConfirmEx" class="form-control">
+                         <label for="materialFormRegisterConfirmEx">Confirm your email</label>
+                      </div>
+                      <div class="md-form">
+                        <i class="fa fa-lock prefix grey-text"></i>
+                        <input type="password" name="userpassword" class="form-control">
+                        <label for="userpassword">Your password</label>
+                      </div>
+                      <div class="md-form">
+                            <i class="fa fa-exclamation-triangle prefix grey-text"></i>
+                            <input type="password" name="cpass" class="form-control">
+                            <label for="cpass">Confirm Your password</label>
+                      </div>
+                      <div class="text-center mt-4">
+                       <button class="btn btn-primary" type="submit">Register</button>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                   </form> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

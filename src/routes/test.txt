@@ -1,0 +1,62 @@
+/* eslint-disable new-cap */
+const router = require('express').Router();
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+const bodyparser = require('body-parser');
+const User = require('../models/user');
+
+router.use(bodyparser.urlencoded({ extended: true }));
+
+const redirecthome = (request, response, next) => {
+  if (request.session.userId) { response.redirect('/'); } else { next(); }
+};
+
+router.get('/registration', redirecthome, (request, response) => {
+  const usersession = request.session;
+  response.render('./../views/registration', { usersession });
+});
+router.get('/logout', (request, response) => {
+  request.session.destroy();
+  response.redirect('./');
+});
+router.get('/login', redirecthome, (request, response) => {
+  const usersession = request.session;
+  response.render('./../views/login', { usersession });
+});
+
+router.post('/registration', redirecthome, async (request, response) => {
+  const usersession = request.session;
+  const hashcode = await bcrypt.hash(request.body.userpassword[0], 8);
+  const user = await new User({
+    _id: new mongoose.Types.ObjectId(),
+    email: request.body.useremail,
+    password: hashcode,
+  });
+  await user.save();
+  response.render('./../views/about', { usersession });
+});
+
+router.post('/login', async (request, response) => {
+  console.log(request.body);
+  request.session.userId = undefined;
+  const result = await User.find({ email: request.body.useremail });
+  console.log(result);
+  if (result.length < 1) {
+    response.redirect('./login');
+  } else {
+    try {
+      const valid = await bcrypt.compare(request.body.userpassword, result[0].password);
+      if (valid) {
+        console.log(valid);
+        request.session.userId = user[0]._id;
+        request.session.save();
+        response.redirect('/');
+      }
+    } catch (err) {
+      console.log("invalid");
+      response.redirect('/login');
+    }
+  }
+});
+
+module.exports = router;

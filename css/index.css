@@ -1,0 +1,52 @@
+body{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+#start{
+    background: url(img/books.jpeg) no-repeat center center fixed;
+    display: table;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    background-size: cover; 
+
+
+}
+.text{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: whitesmoke;
+    text-shadow: -8px -3px 20px black;
+}
+.text h1{
+    font-size: 400%; 
+}
+.text h5{
+    font-size: 170%;
+}
+.foot-padding{
+    padding-bottom: 2%;
+}
+.centeredform{
+	margin-top: 60px;
+}
+
+.centeredform .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+}
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+}
